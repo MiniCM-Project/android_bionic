@@ -22,6 +22,5 @@
 #define NOGROUP (-1)
 #endif
 
-#define MAXHOSTNAMELEN 64  
 
 #endif
