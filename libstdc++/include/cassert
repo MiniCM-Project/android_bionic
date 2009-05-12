@@ -32,4 +32,8 @@
  * can be included multiple times with different definition of NDEBUG, hence the
  * absence of include guards.
  */
+
+#ifndef BIONIC_LIBSTDCPP_INCLUDE_CASSERT__
+#define BIONIC_LIBSTDCPP_INCLUDE_CASSERT__
+#endif
 #include <assert.h>
