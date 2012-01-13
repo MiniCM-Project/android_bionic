@@ -50,6 +50,16 @@ extern struct __res_state *__res_state(void);
 extern int   b64_ntop(u_char const *, size_t, char *, size_t);
 extern int   b64_pton(char const *, u_char *, size_t);
 
+
+/* The following declarations should *not* be part of the public C library
+ * headers, and are also in bionic/libc/private/resolv_iface.h
+ *
+ * Use a guard macro to prevent duplication until we modify system/netd
+ * to use the proper header.
+ */
+#ifndef _BIONIC_RESOLV_IFACE_FUNCTIONS_DECLARED
+#define _BIONIC_RESOLV_IFACE_FUNCTIONS_DECLARED
+
 /* Set name of default interface */
 extern void _resolv_set_default_iface(const char* ifname);
 
@@ -64,6 +74,8 @@ extern void _resolv_flush_cache_for_default_iface();
 
 /* flush the cache associated with a certain interface */
 extern void _resolv_flush_cache_for_iface(const char* ifname);
+
+#endif /* _BIONIC_RESOLV_IFACE_FUNCTIONS_DECLARED */
 
 __END_DECLS
 
